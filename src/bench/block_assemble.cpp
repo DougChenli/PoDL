@@ -41,11 +41,20 @@ static CTxIn MineBlock(const CScript& coinbase_scriptPubKey)
 {
     auto block = PrepareBlock(coinbase_scriptPubKey);
 
-    while (!CheckProofOfWork(block->GetHash(), block->nBits, Params().GetConsensus())) {
-        ++block->nNonce;
-        assert(block->nNonce);
-    }
-
+    //while (!CheckProofOfWork(block->GetHash(), block->nBits, Params().GetConsensus())) {
+        //++block->nNonce;
+        //assert(block->nNonce);
+    //}
+    
+    //modified part begins
+    
+    
+    //call a training function for calculating the target model
+    block->nNonce = ModelHash(*model);
+    
+    //modified part ends
+    
+    
     bool processed{ProcessNewBlock(Params(), block, true, nullptr)};
     assert(processed);
 
