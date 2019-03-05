@@ -142,7 +142,12 @@ UniValue generateBlocks(std::shared_ptr<CReserveScript> coinbaseScript, int nGen
         //    continue;
         //}
         
-        pblock->nNonce = ModelHash(*model);
+        //pblock->nModel = ModelHash(*model);
+        const char* model = {"0x00000000000002dc756eebf4f49723ed8d30cc28a5f108eb94b1ba88ac4f9c22"};
+        //uint256* t = {"0x0000000011111111222222223333333300000000111111112222222233333333"};
+        //int modellen = 10;
+        //uint256 hash = model.GetHash();
+        pblock->nModel = SerializeHash(*model, SER_GETHASH, 0);
         
         std::shared_ptr<const CBlock> shared_pblock = std::make_shared<const CBlock>(*pblock);
         if (!ProcessNewBlock(Params(), shared_pblock, true, nullptr))
@@ -546,7 +551,11 @@ static UniValue getblocktemplate(const JSONRPCRequest& request)
 
     // Update nTime
     UpdateTime(pblock, consensusParams, pindexPrev);
-    pblock->nNonce = uint256();
+    //pblock->nNonce = uint256();
+    //pblock->nModel = unit256();
+    //const unsigned char *model = {123321};
+    //int modellen = 10;
+    pblock->nModel = uint256S("0x00000000000002dc756eebf4f49723ed8d30cc28a5f108eb94b1ba88ac4f9c22"); //initialization same to miner.cpp
 
     // NOTE: If at some point we support pre-segwit miners post-segwit-activation, this needs to take segwit support into consideration
     const bool fPreSegWit = (ThresholdState::ACTIVE != VersionBitsState(pindexPrev, consensusParams, Consensus::DEPLOYMENT_SEGWIT, versionbitscache));

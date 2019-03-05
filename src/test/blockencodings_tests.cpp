@@ -49,7 +49,12 @@ static CBlock BuildBlockTestCase() {
     block.hashMerkleRoot = BlockMerkleRoot(block, &mutated);
     assert(!mutated);
     //while (!CheckProofOfWork(block.GetHash(), block.nBits, Params().GetConsensus())) ++block.nNonce
-    block.nNonce = ModelHash(*model);
+    //block.nModel = SerializeHash("abc");
+    const char* model = {"0x00000000000002dc756eebf4f49723ed8d30cc28a5f108eb94b1ba88ac4f9c22"};
+        //uint256* t = {"0x0000000011111111222222223333333300000000111111112222222233333333"};
+        //int modellen = 10;
+        //uint256 hash = model.GetHash();
+    block.nModel = SerializeHash(*model, SER_GETHASH, 0);
     return block;
 }
 
@@ -299,7 +304,11 @@ BOOST_AUTO_TEST_CASE(EmptyBlockRoundTripTest)
     assert(!mutated);
     //while (!CheckProofOfWork(block.GetHash(), block.nBits, Params().GetConsensus())) ++block.nNonce;
 
-    block.nNonce = ModelHash(*model);
+    const char* model = {"0x00000000000002dc756eebf4f49723ed8d30cc28a5f108eb94b1ba88ac4f9c22"};
+        //uint256* t = {"0x0000000011111111222222223333333300000000111111112222222233333333"};
+        //int modellen = 10;
+        //uint256 hash = model.GetHash();
+    block.nModel = SerializeHash(*model, SER_GETHASH, 0);
     
     // Test simple header round-trip with only coinbase
     {

@@ -26,7 +26,8 @@ public:
     uint256 hashMerkleRoot;
     uint32_t nTime;
     uint32_t nBits;
-    uint256 nNonce;        //set from "uint32_t" to "uint256" as we have the nonce become the hash of the models
+    //uint32_t nNonce;        //set from "uint32_t" to "uint256" as we have the nonce become the hash of the models
+    uint256 nModel;
 
     CBlockHeader()
     {
@@ -42,7 +43,8 @@ public:
         READWRITE(hashMerkleRoot);
         READWRITE(nTime);
         READWRITE(nBits);
-        READWRITE(nNonce);
+        //READWRITE(nNonce);
+        READWRITE(nModel);
     }
 
     void SetNull()
@@ -52,7 +54,8 @@ public:
         hashMerkleRoot.SetNull();
         nTime = 0;
         nBits = 0;
-        nNonce.SetNull();
+        //nNonce= 0;
+        nModel.SetNull();
     }
 
     bool IsNull() const
@@ -112,7 +115,8 @@ public:
         block.hashMerkleRoot = hashMerkleRoot;
         block.nTime          = nTime;
         block.nBits          = nBits;
-        block.nNonce         = nNonce;
+        //block.nNonce         = nNonce;
+        block.nModel         = nModel;
         return block;
     }
 

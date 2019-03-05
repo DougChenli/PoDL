@@ -1199,6 +1199,7 @@
         <in>dbwrapper.cpp</in>
         <in>dbwrapper.h</in>
         <in>dummywallet.cpp</in>
+        <in>ecmult_static_context.h</in>
         <in>fs.cpp</in>
         <in>fs.h</in>
         <in>hash.cpp</in>

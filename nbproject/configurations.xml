@@ -491,7 +491,7 @@
           <buildCommandWorkingDir>.</buildCommandWorkingDir>
           <buildCommand>${MAKE} -f Makefile</buildCommand>
           <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
-          <executablePath></executablePath>
+          <executablePath>src/secp256k1/gen_context</executablePath>
           <cTool>
             <incDir>
               <pElem>src/secp256k1</pElem>
@@ -554,8 +554,15 @@
           <incDir>
             <pElem>src</pElem>
             <pElem>src/config</pElem>
+            <pElem>/usr/include</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers/memenv</pElem>
+            <pElem>src/secp256k1/include</pElem>
+            <pElem>src/univalue/include</pElem>
           </incDir>
           <preprocessorList>
+            <Elem>BOOST_AC_USE_STD_ATOMIC</Elem>
+            <Elem>BOOST_SP_USE_STD_ATOMIC</Elem>
             <Elem>HAVE_BUILD_INFO</Elem>
             <Elem>_FORTIFY_SOURCE=2</Elem>
             <Elem>__STDC_FORMAT_MACROS</Elem>
@@ -660,8 +667,15 @@
           <incDir>
             <pElem>src</pElem>
             <pElem>src/config</pElem>
+            <pElem>/usr/include</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers/memenv</pElem>
+            <pElem>src/secp256k1/include</pElem>
+            <pElem>src/univalue/include</pElem>
           </incDir>
           <preprocessorList>
+            <Elem>BOOST_AC_USE_STD_ATOMIC</Elem>
+            <Elem>BOOST_SP_USE_STD_ATOMIC</Elem>
             <Elem>HAVE_BUILD_INFO</Elem>
             <Elem>_FORTIFY_SOURCE=2</Elem>
             <Elem>__STDC_FORMAT_MACROS</Elem>
@@ -1321,30 +1335,11 @@
         </ccTool>
       </item>
       <item path="src/consensus/merkle.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="2">
-          <incDir>
-            <pElem>src/obj</pElem>
-            <pElem>src/secp256k1/include</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>BUILD_BITCOIN_INTERNAL</Elem>
-            <Elem>PIC</Elem>
-          </preprocessorList>
+        <ccTool flags="3">
         </ccTool>
       </item>
       <item path="src/consensus/tx_verify.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="3">
-          <incDir>
-            <pElem>/usr/include</pElem>
-            <pElem>src/leveldb/include</pElem>
-            <pElem>src/leveldb/helpers/memenv</pElem>
-            <pElem>src/secp256k1/include</pElem>
-            <pElem>src/univalue/include</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>BOOST_AC_USE_STD_ATOMIC</Elem>
-            <Elem>BOOST_SP_USE_STD_ATOMIC</Elem>
-          </preprocessorList>
         </ccTool>
       </item>
       <item path="src/core_read.cpp" ex="false" tool="1" flavor2="8">
@@ -1388,87 +1383,31 @@
         </ccTool>
       </item>
       <item path="src/crypto/aes.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="2">
-          <incDir>
-            <pElem>src/obj</pElem>
-            <pElem>src/secp256k1/include</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>BUILD_BITCOIN_INTERNAL</Elem>
-            <Elem>PIC</Elem>
-          </preprocessorList>
+        <ccTool flags="3">
         </ccTool>
       </item>
       <item path="src/crypto/chacha20.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="2">
-          <incDir>
-            <pElem>src/obj</pElem>
-            <pElem>src/secp256k1/include</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>BUILD_BITCOIN_INTERNAL</Elem>
-            <Elem>PIC</Elem>
-          </preprocessorList>
+        <ccTool flags="3">
         </ccTool>
       </item>
       <item path="src/crypto/hmac_sha256.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="2">
-          <incDir>
-            <pElem>src/obj</pElem>
-            <pElem>src/secp256k1/include</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>BUILD_BITCOIN_INTERNAL</Elem>
-            <Elem>PIC</Elem>
-          </preprocessorList>
+        <ccTool flags="3">
         </ccTool>
       </item>
       <item path="src/crypto/hmac_sha512.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="2">
-          <incDir>
-            <pElem>src/obj</pElem>
-            <pElem>src/secp256k1/include</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>BUILD_BITCOIN_INTERNAL</Elem>
-            <Elem>PIC</Elem>
-          </preprocessorList>
+        <ccTool flags="3">
         </ccTool>
       </item>
       <item path="src/crypto/ripemd160.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="2">
-          <incDir>
-            <pElem>src/obj</pElem>
-            <pElem>src/secp256k1/include</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>BUILD_BITCOIN_INTERNAL</Elem>
-            <Elem>PIC</Elem>
-          </preprocessorList>
+        <ccTool flags="3">
         </ccTool>
       </item>
       <item path="src/crypto/sha1.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="2">
-          <incDir>
-            <pElem>src/obj</pElem>
-            <pElem>src/secp256k1/include</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>BUILD_BITCOIN_INTERNAL</Elem>
-            <Elem>PIC</Elem>
-          </preprocessorList>
+        <ccTool flags="3">
         </ccTool>
       </item>
       <item path="src/crypto/sha256.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="2">
-          <incDir>
-            <pElem>src/obj</pElem>
-            <pElem>src/secp256k1/include</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>BUILD_BITCOIN_INTERNAL</Elem>
-            <Elem>PIC</Elem>
-          </preprocessorList>
+        <ccTool flags="3">
         </ccTool>
       </item>
       <item path="src/crypto/sha256_avx2.cpp" ex="false" tool="1" flavor2="8">
@@ -1486,15 +1425,7 @@
         </ccTool>
       </item>
       <item path="src/crypto/sha256_sse4.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="2">
-          <incDir>
-            <pElem>src/obj</pElem>
-            <pElem>src/secp256k1/include</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>BUILD_BITCOIN_INTERNAL</Elem>
-            <Elem>PIC</Elem>
-          </preprocessorList>
+        <ccTool flags="3">
         </ccTool>
       </item>
       <item path="src/crypto/sha256_sse41.cpp" ex="false" tool="1" flavor2="8">
@@ -1505,27 +1436,11 @@
         </ccTool>
       </item>
       <item path="src/crypto/sha512.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="2">
-          <incDir>
-            <pElem>src/obj</pElem>
-            <pElem>src/secp256k1/include</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>BUILD_BITCOIN_INTERNAL</Elem>
-            <Elem>PIC</Elem>
-          </preprocessorList>
+        <ccTool flags="3">
         </ccTool>
       </item>
       <item path="src/crypto/siphash.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="2">
-          <incDir>
-            <pElem>src/obj</pElem>
-            <pElem>src/secp256k1/include</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>BUILD_BITCOIN_INTERNAL</Elem>
-            <Elem>PIC</Elem>
-          </preprocessorList>
+        <ccTool flags="3">
         </ccTool>
       </item>
       <item path="src/dbwrapper.cpp" ex="false" tool="1" flavor2="8">
@@ -2122,30 +2037,11 @@
         </ccTool>
       </item>
       <item path="src/primitives/block.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="2">
-          <incDir>
-            <pElem>src/obj</pElem>
-            <pElem>src/secp256k1/include</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>BUILD_BITCOIN_INTERNAL</Elem>
-            <Elem>PIC</Elem>
-          </preprocessorList>
+        <ccTool flags="3">
         </ccTool>
       </item>
       <item path="src/primitives/transaction.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="3">
-          <incDir>
-            <pElem>/usr/include</pElem>
-            <pElem>src/leveldb/include</pElem>
-            <pElem>src/leveldb/helpers/memenv</pElem>
-            <pElem>src/secp256k1/include</pElem>
-            <pElem>src/univalue/include</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>BOOST_AC_USE_STD_ATOMIC</Elem>
-            <Elem>BOOST_SP_USE_STD_ATOMIC</Elem>
-          </preprocessorList>
         </ccTool>
       </item>
       <item path="src/protocol.cpp" ex="false" tool="1" flavor2="8">

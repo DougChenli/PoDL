@@ -58,7 +58,8 @@ static void DuplicateInputs(benchmark::State& state)
     CBlockIndex* pindexPrev = ::chainActive.Tip();
     assert(pindexPrev != nullptr);
     block.nBits = GetNextWorkRequired(pindexPrev, &block, chainparams.GetConsensus());
-    block.nNonce = uint256();
+    //block.nNonce = uint_32t;
+    block.nModel = uint256S("0x00000000000002dc756eebf4f49723ed8d30cc28a5f108eb94b1ba88ac4f9c22"); // same to miner.cpp
     auto nHeight = pindexPrev->nHeight + 1;
 
     // Make a coinbase TX

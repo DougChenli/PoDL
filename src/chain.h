@@ -219,7 +219,8 @@ public:
     uint256 hashMerkleRoot;
     uint32_t nTime;
     uint32_t nBits;
-    uint256 nNonce;
+    //uint32_t nNonce;
+    uint256 nModel;
 
     //! (memory only) Sequential id assigned to distinguish order in which blocks are received.
     int32_t nSequenceId;
@@ -247,7 +248,8 @@ public:
         hashMerkleRoot = uint256();
         nTime          = 0;
         nBits          = 0;
-        nNonce         = uint256();         //change from "0" to "uint256()"
+        //nNonce         = 0;         //change from "0" to "uint256()"
+        nModel         = uint256();
     }
 
     CBlockIndex()
@@ -263,7 +265,8 @@ public:
         hashMerkleRoot = block.hashMerkleRoot;
         nTime          = block.nTime;
         nBits          = block.nBits;
-        nNonce         = block.nNonce;
+        //nNonce         = block.nNonce;
+        nModel         = block.nModel;
     }
 
     CDiskBlockPos GetBlockPos() const {
@@ -293,7 +296,8 @@ public:
         block.hashMerkleRoot = hashMerkleRoot;
         block.nTime          = nTime;
         block.nBits          = nBits;
-        block.nNonce         = nNonce;
+        //block.nNonce         = nNonce;
+        block.nModel         = nModel;
         return block;
     }
 
@@ -421,7 +425,8 @@ public:
         READWRITE(hashMerkleRoot);
         READWRITE(nTime);
         READWRITE(nBits);
-        READWRITE(nNonce);
+        //READWRITE(nNonce);
+        READWRITE(nModel);
     }
 
     uint256 GetBlockHash() const
@@ -432,7 +437,8 @@ public:
         block.hashMerkleRoot  = hashMerkleRoot;
         block.nTime           = nTime;
         block.nBits           = nBits;
-        block.nNonce          = nNonce;
+        //block.nNonce          = nNonce;
+        block.nModel         = nModel;
         return block.GetHash();
     }
 
