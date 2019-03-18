@@ -6,7 +6,7 @@
             <name>bitcoin</name>
             <c-extensions>c</c-extensions>
             <cpp-extensions>cc,cpp,cxx,mm</cpp-extensions>
-            <header-extensions>h,moc</header-extensions>
+            <header-extensions>h</header-extensions>
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>
